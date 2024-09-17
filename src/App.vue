@@ -19,9 +19,13 @@
       </div>
     </div>
   </div>
+  <div class="h-screen">
+    <Information />
+  </div>
 </template>
 <script setup>
-import Header from "./views/Header.vue";
+import Header from "./components/Header.vue";
+import Information from "./views/Information.vue";
 import { Icon } from "@iconify/vue";
 </script>
 <style>
