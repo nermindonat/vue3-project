@@ -3,7 +3,7 @@
     class="h-screen bg-[url('src/assets/images/bg-image.jpg')] bg-cover bg-center relative flex flex-col justify-center"
   >
     <div class="bg-black/50 absolute inset-0 z-0"></div>
-    <div class="absolute left-0 top-0 w-full"><Header /></div>
+
     <h4 class="text-white text-7xl z-10 w-5/6 ml-10 mt-24">
       MNS Yapı İle Hayalinizdeki Evi Tasarlayın!
     </h4>
@@ -24,7 +24,7 @@
 </template>
 <script setup>
 import { Icon } from "@iconify/vue";
-import Header from "../components/Header.vue";
+
 import Information from "../views/Information.vue";
 import Footer from "../components/Footer.vue";
 </script>

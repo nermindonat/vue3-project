@@ -5,9 +5,9 @@
     <h2 class="text-xl font-bold">MNS YAPI</h2>
     <nav id="nav" class="font-semibold space-x-6">
       <router-link to="/">Anasayfa</router-link>
-      <router-link to="/about-us">Hakkımızda</router-link>
-      <router-link href="">Hizmetlerimiz</router-link>
-      <router-link href="">İletişim</router-link>
+      <router-link to="/hakkimizda">Hakkımızda</router-link>
+      <router-link to="/hizmetlerimiz">Hizmetlerimiz</router-link>
+      <router-link to="/iletisim">İletişim</router-link>
     </nav>
   </div>
   <div class="mt-16">

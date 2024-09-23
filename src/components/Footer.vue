@@ -3,14 +3,14 @@
     class="flex justify-between p-12 px-20 bg-[#0a0c0f] text-white border border-x-white"
   >
     <div class="flex flex-col w-56 p-4">
-      <h2 class="mb-4">MNS YAPI</h2>
+      <h2 class="mb-4 font-bold text-lg">MNS YAPI</h2>
       <p>
         Mimari yolcuğunuza eşlik ediyoruz. Hayallerinizi gerçeğe dönüştürmek
         için mimari ve yaratıcı çözümler üretiyoruz.
       </p>
     </div>
     <div class="flex flex-col w-56 p-4">
-      <h2 class="mb-4">Bizi Takip Edin</h2>
+      <h2 class="mb-4 font-bold text-lg">Bizi Takip Edin</h2>
       <ul class="leading-10">
         <li class="flex items-center">
           <Icon icon="bi:facebook" width="1.2em" height="1.2em" />
@@ -31,7 +31,7 @@
       </ul>
     </div>
     <div class="flex flex-col w-56 p-4">
-      <h2 class="mb-4">İletişim Bilgileri</h2>
+      <h2 class="mb-4 font-bold text-lg">İletişim Bilgileri</h2>
       <div class="leading-10">
         <div class="flex items-center">
           <Icon icon="ph:phone-fill" width="1.2em" height="1.2em" />
