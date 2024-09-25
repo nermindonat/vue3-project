@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex justify-between p-12 px-20 bg-[#0a0c0f] text-white border border-x-white"
-  >
+  <div class="flex justify-between p-12 px-20 bg-[#0a0c0f] text-white">
     <div class="flex flex-col w-56 p-4">
       <h2 class="mb-4 font-bold text-lg">MNS YAPI</h2>
       <p>

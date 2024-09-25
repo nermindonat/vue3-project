@@ -11,13 +11,49 @@
       Anasayfa / İletişim
     </div>
   </div>
-  <div ref="map" class="w-full h-[500px] p-10 mb-5"></div>
+  <div class="w-full flex justify-center h-[300px] p-10 mb-10">
+    <div
+      class="w-[300px] flex flex-col items-center border border-gray-200 rounded-md p-5 mx-10 shadow-[0_4px_30px_rgba(0,0,0,0.2)]"
+    >
+      <div
+        class="flex items-center justify-center w-16 h-16 rounded-full border border-gray-200 mb-5 bg-[#e7c092]"
+      >
+        <Icon icon="ph:phone-light" width="2em" height="2em" />
+      </div>
+      <h3 class="font-bold text-xl mb-5">Telefon</h3>
+      <p>0546 786 43 54</p>
+    </div>
+    <div
+      class="w-[300px] flex flex-col items-center border border-gray-200 rounded-md p-5 mx-10 shadow-[0_4px_30px_rgba(0,0,0,0.2)]"
+    >
+      <div
+        class="flex items-center justify-center w-16 h-16 rounded-full border border-gray-200 mb-5 bg-[#e7c092]"
+      >
+        <Icon icon="mdi-light:email" width="2em" height="2em" />
+      </div>
+      <h3 class="font-bold text-xl mb-5">E-posta Adresi</h3>
+      <p>mnsyapi@gmail.com</p>
+    </div>
+    <div
+      class="w-[300px] flex flex-col items-center border border-gray-200 rounded-md p-5 mx-10 shadow-[0_4px_30px_rgba(0,0,0,0.2)]"
+    >
+      <div
+        class="flex items-center justify-center w-16 h-16 rounded-full border border-gray-200 mb-5 bg-[#e7c092]"
+      >
+        <Icon icon="carbon:location" width="2em" height="2em" />
+      </div>
+      <h3 class="font-bold text-xl mb-5">Adres</h3>
+      <p>Fuat Edip Baksı Mahallesi Anadolu Caddesi Bayraklı / İzmir</p>
+    </div>
+  </div>
+  <div ref="map" class="w-full h-[500px] p-10 mb-2"></div>
   <Footer />
 </template>
 <script setup>
 import Footer from "@/components/Footer.vue";
-
+import { Icon } from "@iconify/vue";
 import { ref, onMounted } from "vue";
+
 const map = ref(null);
 
 onMounted(() => {
