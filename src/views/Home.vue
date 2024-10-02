@@ -4,16 +4,20 @@
   >
     <div class="bg-black/50 absolute inset-0 z-0"></div>
 
-    <h4 class="text-white text-7xl z-10 w-5/6 ml-10 mt-24">
+    <h4
+      class="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl z-10 w-5/6 ml-4 sm:ml-6 md:ml-10 mt-12 md:mt-24"
+    >
       MNS Yapı İle Hayalinizdeki Evi Tasarlayın!
     </h4>
-    <div class="z-10 text-white flex items-center">
+    <div
+      class="z-10 text-white flex flex-col items-start sm:flex-row md:items-center"
+    >
       <button
-        class="relative bg-white py-1.5 px-6 text-green-800 ml-10 mt-10 pr-12 clip-path-right-arrow animate-bounce-horizontal"
+        class="relative bg-white ml-4 py-1.5 px-6 text-green-800 sm:ml-10 mt-10 pr-12 clip-path-right-arrow"
       >
         Bizi Arayın
       </button>
-      <div class="flex items-center mt-10 ml-8">
+      <div class="flex items-center mt-4 sm:mt-10 ml-4 sm:ml-8">
         <Icon icon="ph:phone-fill" width="16" height="16" />
         <span class="font-bold ml-2">Telefon: 0545 345 67 43</span>
       </div>
