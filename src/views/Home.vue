@@ -9,11 +9,11 @@
     </h4>
     <div class="z-10 text-white flex items-center">
       <button
-        class="relative bg-white py-1.5 px-6 text-green-800 ml-10 mt-10 pr-12 clip-path-right-arrow"
+        class="relative bg-white py-1.5 px-6 text-green-800 ml-10 mt-10 pr-12 clip-path-right-arrow animate-bounce-horizontal"
       >
         Bizi Arayın
       </button>
-      <div class="flex items-center mt-10 ml-4">
+      <div class="flex items-center mt-10 ml-8">
         <Icon icon="ph:phone-fill" width="16" height="16" />
         <span class="font-bold ml-2">Telefon: 0545 345 67 43</span>
       </div>
