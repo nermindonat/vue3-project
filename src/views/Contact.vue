@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full h-[400px] bg-[url('src/assets/images/bg-about-image.jpg')] bg-cover bg-center bg-no-repeat relative bottom-10"
+    class="w-full h-[400px] bg-[url('/images/bg-about-image.jpg')] bg-cover bg-center bg-no-repeat relative bottom-10"
   >
     <div class="absolute inset-0 flex items-center justify-center">
       <h2 class="font-bold text-5xl leading-10 text-black">İletişim</h2>

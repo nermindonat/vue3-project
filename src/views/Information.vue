@@ -4,7 +4,7 @@
       class="w-full max-w-[600px] h-[600px] overflow-hidden rounded-full mb-8 md:mb-0"
     >
       <img
-        src="@/assets/images/info-image.jpg"
+        src="/images/info-image.jpg"
         alt="Fikirlerin Gerçeğe Dönüşümü"
         class="w-full h-full object-cover rounded-full"
       />

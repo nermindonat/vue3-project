@@ -1,6 +1,6 @@
 <template>
   <div
-    class="h-screen bg-[url('src/assets/images/bg-image.jpg')] bg-cover bg-center relative flex flex-col justify-center"
+    class="h-screen bg-[url('/images/bg-image.jpg')] bg-cover bg-center relative flex flex-col justify-center"
   >
     <div class="bg-black/50 absolute inset-0 z-0"></div>
 
