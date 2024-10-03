@@ -11,11 +11,15 @@
       Anasayfa / Hakkımızda
     </div>
   </div>
-  <div class="p-10 flex items-center justify-center">
-    <div class="flex w-full">
+  <div class="p-6 md:p-10 flex items-center justify-center">
+    <div class="flex flex-col md:flex-row w-full">
       <div class="flex-1 flex flex-col items-center p-4">
-        <h2 class="font-bold text-2xl leading-10 text-black p-2">Hakkımızda</h2>
-        <h4 class="p-2 text-justify">
+        <h2
+          class="font-bold text-xl md:text-2xl leading-8 md:leading-10 text-black p-2"
+        >
+          Hakkımızda
+        </h2>
+        <h4 class="p-2 text-justify text-sm md:text-base">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
           voluptate officia aspernatur dolor doloremque nostrum quis magni at
           animi, minus eum ipsa. Voluptatibus eveniet animi cumque dignissimos
@@ -32,12 +36,13 @@
       <div class="flex-1 flex items-center justify-center p-4">
         <img
           src="@/assets/images/about-image.jpg"
-          alt=""
-          class="w-[600px] h-[500px] object-cover"
+          alt="Hakkımızda"
+          class="w-full h-auto max-w-xs md:max-w-md lg:max-w-lg object-cover"
         />
       </div>
     </div>
   </div>
+
   <Footer />
 </template>
 <script setup>
