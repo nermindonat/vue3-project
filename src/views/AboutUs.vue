@@ -8,7 +8,7 @@
     <div
       class="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-14 flex items-center whitespace-nowrap text-black z-10 bg-white p-4"
     >
-      Anasayfa / Hakkımızda
+      <a href="/" class="hover:underline mr-2">Anasayfa</a> / Hakkımızda
     </div>
   </div>
   <div class="p-6 md:p-10 flex items-center justify-center">

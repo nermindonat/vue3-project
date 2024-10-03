@@ -19,7 +19,7 @@
       </button>
       <div class="flex items-center mt-4 sm:mt-10 ml-4 sm:ml-8">
         <Icon icon="ph:phone-fill" width="16" height="16" />
-        <span class="font-bold ml-2">Telefon: 0545 345 67 43</span>
+        <span class="font-bold ml-2">Telefon: 0541 402 44 21</span>
       </div>
     </div>
   </div>

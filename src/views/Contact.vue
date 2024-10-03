@@ -8,7 +8,7 @@
     <div
       class="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-14 flex items-center text-black z-10 bg-white p-4"
     >
-      Anasayfa / İletişim
+      <a href="/" class="hover:underline mr-2">Anasayfa</a> / İletişim
     </div>
   </div>
   <div
@@ -23,7 +23,7 @@
         <Icon icon="ph:phone-light" width="2em" height="2em" />
       </div>
       <h3 class="font-bold text-xl mb-5">Telefon</h3>
-      <p>0546 786 43 54</p>
+      <p>0541 402 44 21</p>
     </div>
     <div
       class="w-full md:w-[300px] flex flex-col items-center border border-gray-200 rounded-md p-5 shadow-[0_4px_30px_rgba(0,0,0,0.2)] transition-transform duration-300 hover:scale-105"
