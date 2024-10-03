@@ -1,8 +1,8 @@
 <template>
   <div
-    class="h-16 flex justify-between items-center px-6 md:px-12 text-white bg-[#0a0c0f] fixed w-full top-0 z-50"
+    class="h-16 flex justify-between items-center px-6 md:px-12 text-white bg-[#34445D] fixed w-full top-0 z-50"
   >
-    <h2 class="text-xl font-bold">MNS YAPI</h2>
+    <a href="/" class="text-xl font-bold">MNS YAPI</a>
     <div class="md:hidden">
       <button @click="isMenuOpen = !isMenuOpen" class="focus:outline-none">
         <svg

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col md:flex-row justify-between p-4 md:p-12 bg-[#0a0c0f] text-white"
+    class="flex flex-col md:flex-row justify-between p-4 md:p-12 bg-[#34445D] text-white"
   >
     <div
       class="flex flex-col w-full md:w-56 p-4 mb-6 md:mb-0 items-center md:items-start"

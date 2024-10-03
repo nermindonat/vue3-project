@@ -6,7 +6,7 @@
       <h2 class="font-bold text-5xl leading-10 text-black">Hakkımızda</h2>
     </div>
     <div
-      class="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-14 flex items-center text-black z-10 bg-white p-4"
+      class="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-14 flex items-center whitespace-nowrap text-black z-10 bg-white p-4"
     >
       Anasayfa / Hakkımızda
     </div>
