@@ -60,13 +60,20 @@ import { ref, onMounted } from "vue";
 const map = ref(null);
 
 onMounted(() => {
-  if (window.google && window.google.maps) {
-    const googleMap = new window.google.maps.Map(map.value, {
-      center: { lat: 38.462223, lng: 27.166668 }, // Haritanın merkezi İzmir
-      zoom: 10, // Yakınlaştırma seviyesi
-    });
-  } else {
-    console.error("Google Maps API yüklenemedi.");
-  }
+  const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Vite 3 için
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}`;
+  script.async = true;
+  script.onload = () => {
+    if (window.google && window.google.maps) {
+      const googleMap = new window.google.maps.Map(map.value, {
+        center: { lat: 38.462223, lng: 27.166668 }, // Haritanın merkezi İzmir
+        zoom: 10, // Yakınlaştırma seviyesi
+      });
+    } else {
+      console.error("Google Maps API yüklenemedi.");
+    }
+  };
+  document.body.appendChild(script);
 });
 </script>
