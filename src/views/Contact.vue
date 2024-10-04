@@ -92,7 +92,6 @@
       </form>
     </div>
   </div>
-
   <div ref="map" class="w-full h-[500px] p-10 mb-2"></div>
   <Footer />
 </template>
