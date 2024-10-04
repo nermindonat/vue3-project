@@ -17,6 +17,9 @@ export default {
         "slide-left": "slide-left 1s ease-in-out",
         "bounce-horizontal": "bounce-horizontal 2s infinite",
       },
+      boxShadow: {
+        "custom-inset": "inset 0 1px 2px rgba(0, 0, 0, 0.15)",
+      },
     },
   },
   plugins: [],

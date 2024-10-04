@@ -30,7 +30,7 @@
 import { Icon } from "@iconify/vue";
 
 import Information from "../views/Information.vue";
-import Footer from "../components/Footer.vue";
+import Footer from "../layouts/Footer.vue";
 </script>
 <style>
 .clip-path-right-arrow {

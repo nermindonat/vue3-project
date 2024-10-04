@@ -48,12 +48,59 @@
       <p>Fuat Edip Baksı Mahallesi Anadolu Caddesi Bayraklı / İzmir</p>
     </div>
   </div>
+  <div class="flex flex-col md:flex-row w-full mb-10 px-10">
+    <div class="flex-1 flex items-center mb-5 md:mb-0 md:mr-5">
+      <img
+        src="/images/contact-image.jpg"
+        alt="Hakkımızda"
+        class="w-full h-[450px] md:max-w-md lg:max-w-lg object-cover"
+      />
+    </div>
+    <div
+      class="w-full flex-1 flex-col flex border border-gray-300 rounded-[6px]"
+    >
+      <div class="bg-[#f5f5f5] px-9 py-3 rounded-[6px]">
+        <h2 class="font-semibold text-[1.714em] leading-[1.618em]">
+          Bizimle İletişime Geçin
+        </h2>
+      </div>
+      <form action="" class="flex flex-col gap-4 py-4 px-9">
+        <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
+          <Input
+            id="nameSurname"
+            name="nameSurname"
+            label="Ad Soyad"
+            required
+          />
+          <Input id="email" name="email" label="E-mail" required />
+        </div>
+        <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
+          <Input
+            id="phoneNumber"
+            name="phoneNumber"
+            label="Telefon Numarası"
+            required
+          />
+          <Input id="subject" name="subject" label="Konu" required />
+        </div>
+        <div class="grid w-full gap-4">
+          <TextArea id="message" name="message" label="Mesajınız" required />
+        </div>
+        <div class="flex justify-end">
+          <Button type="submit"> Gönder </Button>
+        </div>
+      </form>
+    </div>
+  </div>
 
   <div ref="map" class="w-full h-[500px] p-10 mb-2"></div>
   <Footer />
 </template>
 <script setup>
-import Footer from "@/components/Footer.vue";
+import Footer from "@/layouts/Footer.vue";
+import Input from "@/components/Input.vue";
+import TextArea from "@/components/TextArea.vue";
+import Button from "@/components/Button.vue";
 import { Icon } from "@iconify/vue";
 import { ref, onMounted } from "vue";
 
