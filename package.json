@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "router-link": "^0.0.4",
+    "vee-validate": "^4.13.2",
     "vue": "^3.4.29",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@iconify/vue": "^4.1.2",

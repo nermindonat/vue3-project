@@ -53,7 +53,7 @@
       <img
         src="/images/contact-image.jpg"
         alt="Hakkımızda"
-        class="w-full h-[450px] md:max-w-md lg:max-w-lg object-cover"
+        class="w-full h-[450px] md:max-w-md lg:max-w-lg object-cover rounded-[6px]"
       />
     </div>
     <div
@@ -64,30 +64,56 @@
           Bizimle İletişime Geçin
         </h2>
       </div>
-      <form action="" class="flex flex-col gap-4 py-4 px-9">
+      <form class="flex flex-col gap-4 py-4 px-9">
         <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
           <Input
             id="nameSurname"
             name="nameSurname"
             label="Ad Soyad"
+            v-model="nameSurname"
+            :errorMessage="nameSurnameError"
             required
           />
-          <Input id="email" name="email" label="E-mail" required />
+          <Input
+            id="email"
+            type="email"
+            name="email"
+            label="E-mail"
+            v-model="email"
+            :errorMessage="emailError"
+            required
+          />
         </div>
         <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
           <Input
             id="phoneNumber"
             name="phoneNumber"
             label="Telefon Numarası"
+            v-model="phoneNumber"
+            :errorMessage="phoneNumberError"
             required
           />
-          <Input id="subject" name="subject" label="Konu" required />
+          <Input
+            id="subject"
+            name="subject"
+            label="Konu"
+            v-model="subject"
+            :errorMessage="subjectError"
+            required
+          />
         </div>
         <div class="grid w-full gap-4">
-          <TextArea id="message" name="message" label="Mesajınız" required />
+          <TextArea
+            id="message"
+            name="message"
+            label="Mesajınız"
+            v-model="message"
+            :errorMessage="messageError"
+            required
+          />
         </div>
         <div class="flex justify-end">
-          <Button type="submit"> Gönder </Button>
+          <Button type="submit" @click="handleSubmit"> Gönder </Button>
         </div>
       </form>
     </div>
@@ -96,15 +122,37 @@
   <Footer />
 </template>
 <script setup>
+import * as yup from "yup";
 import Footer from "@/layouts/Footer.vue";
 import Input from "@/components/Input.vue";
 import TextArea from "@/components/TextArea.vue";
 import Button from "@/components/Button.vue";
 import { Icon } from "@iconify/vue";
 import { ref, onMounted } from "vue";
+import { useForm, useField } from "vee-validate";
 
 const map = ref(null);
 
+const validationSchema = yup.object({
+  nameSurname: yup.string().required(),
+  email: yup.string().required(),
+  phoneNumber: yup.string().required(),
+  subject: yup.string().required(),
+  message: yup.string().required(),
+});
+
+const form = useForm({ validationSchema });
+const { value: nameSurname, errorMessage: nameSurnameError } =
+  useField("nameSurname");
+const { value: email, errorMessage: emailError } = useField("email");
+const { value: phoneNumber, errorMessage: phoneNumberError } =
+  useField("phoneNumber");
+const { value: subject, errorMessage: subjectError } = useField("subject");
+const { value: message, errorMessage: messageError } = useField("message");
+
+const handleSubmit = form.handleSubmit((values) => {
+  console.log("Clicked", values);
+});
 onMounted(() => {
   const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Vite 3 için
   const script = document.createElement("script");
