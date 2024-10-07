@@ -53,7 +53,7 @@
       <img
         src="/images/contact-image.jpg"
         alt="Hakkımızda"
-        class="w-full h-[450px] md:max-w-md lg:max-w-lg object-cover rounded-[6px]"
+        class="w-full h-[480px] md:max-w-md lg:max-w-lg object-cover rounded-[6px]"
       />
     </div>
     <div
@@ -64,7 +64,10 @@
           Bizimle İletişime Geçin
         </h2>
       </div>
-      <form class="flex flex-col gap-4 py-4 px-9">
+      <form
+        @submit.prevent="handleSubmit"
+        class="flex flex-col gap-4 py-4 px-9"
+      >
         <div class="grid w-full grid-cols-1 md:grid-cols-2 gap-4">
           <Input
             id="nameSurname"
@@ -113,9 +116,15 @@
           />
         </div>
         <div class="flex justify-end">
-          <Button type="submit" @click="handleSubmit"> Gönder </Button>
+          <Button type="submit"> Gönder </Button>
         </div>
       </form>
+      <div
+        v-if="successMessage"
+        class="flex items-center justify-center mb-4 font-semibold"
+      >
+        Mesajınız başarıyla gönderilmiştir.
+      </div>
     </div>
   </div>
   <div ref="map" class="w-full h-[500px] p-10 mb-2"></div>
@@ -130,8 +139,10 @@ import Button from "@/components/Button.vue";
 import { Icon } from "@iconify/vue";
 import { ref, onMounted } from "vue";
 import { useForm, useField } from "vee-validate";
+import axios from "axios";
 
 const map = ref(null);
+const successMessage = ref(false);
 
 const validationSchema = yup.object({
   nameSurname: yup.string().required(),
@@ -150,9 +161,26 @@ const { value: phoneNumber, errorMessage: phoneNumberError } =
 const { value: subject, errorMessage: subjectError } = useField("subject");
 const { value: message, errorMessage: messageError } = useField("message");
 
-const handleSubmit = form.handleSubmit((values) => {
-  console.log("Clicked", values);
+const handleSubmit = form.handleSubmit(async (values) => {
+  try {
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_BASE_URL}/contact-form`,
+      {
+        nameSurname: values.nameSurname,
+        email: values.email,
+        phoneNumber: values.phoneNumber,
+        subject: values.subject,
+        message: values.message,
+      }
+    );
+    if (response) {
+      successMessage.value = true;
+    }
+  } catch (error) {
+    console.error("From gönderirken hata oluştu.", error);
+  }
 });
+
 onMounted(() => {
   const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY; // Vite 3 için
   const script = document.createElement("script");
