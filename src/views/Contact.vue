@@ -145,11 +145,11 @@ const map = ref(null);
 const successMessage = ref(false);
 
 const validationSchema = yup.object({
-  nameSurname: yup.string().required(),
-  email: yup.string().required(),
-  phoneNumber: yup.string().required(),
-  subject: yup.string().required(),
-  message: yup.string().required(),
+  nameSurname: yup.string().required("Ad ve Soyad alanı zorunludur"),
+  email: yup.string().required("E-posta alanı zorunludur"),
+  phoneNumber: yup.string().required("Telefon Numarası alanı zorunludur"),
+  subject: yup.string().required("Konu alanı zorunludur"),
+  message: yup.string().required("Mesaj alanı zorunludur"),
 });
 
 const form = useForm({ validationSchema });
@@ -164,7 +164,7 @@ const { value: message, errorMessage: messageError } = useField("message");
 const handleSubmit = form.handleSubmit(async (values) => {
   try {
     const response = await axios.post(
-      `${import.meta.env.VITE_API_BASE_URL}/contact-form`,
+      `${process.env.VITE_API_BASE_URL}/contact-form`,
       {
         nameSurname: values.nameSurname,
         email: values.email,
