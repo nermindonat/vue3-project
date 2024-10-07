@@ -164,7 +164,7 @@ const { value: message, errorMessage: messageError } = useField("message");
 const handleSubmit = form.handleSubmit(async (values) => {
   try {
     const response = await axios.post(
-      `${process.env.VITE_API_BASE_URL}/contact-form`,
+      `${import.meta.env.VITE_API_BASE_URL}/contact-form`,
       {
         nameSurname: values.nameSurname,
         email: values.email,
