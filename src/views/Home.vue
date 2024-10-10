@@ -33,24 +33,20 @@ import Information from "../views/Information.vue";
 import Footer from "../layouts/Footer.vue";
 
 const isMobileDevice = () => {
-  return /Mobi|Android/i.test(navigator.userAgent);
+  return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Opera Mini|IEMobile|Windows Phone/i.test(
+    navigator.userAgent
+  );
 };
 
-// Buton tıklama işlemi
 const handleCall = () => {
-  console.log("click me");
-
   if (isMobileDevice()) {
-    console.log("mobil cihaz");
-
     window.location.href = "tel:05414024421";
   } else {
-    console.log("bu bir mobil cihaz değil");
-
     alert("Bu özellik yalnızca mobil cihazlarda kullanılabilir.");
   }
 };
 </script>
+
 <style>
 .clip-path-right-arrow {
   clip-path: polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%);
