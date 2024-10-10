@@ -13,6 +13,7 @@
       class="z-10 text-white flex flex-col items-start sm:flex-row md:items-center"
     >
       <button
+        @click="handleCall"
         class="relative bg-white ml-4 py-1.5 px-6 text-green-800 sm:ml-10 mt-10 pr-12 clip-path-right-arrow"
       >
         Bizi Arayın
@@ -28,9 +29,27 @@
 </template>
 <script setup>
 import { Icon } from "@iconify/vue";
-
 import Information from "../views/Information.vue";
 import Footer from "../layouts/Footer.vue";
+
+const isMobileDevice = () => {
+  return /Mobi|Android/i.test(navigator.userAgent);
+};
+
+// Buton tıklama işlemi
+const handleCall = () => {
+  console.log("click me");
+
+  if (isMobileDevice()) {
+    console.log("mobil cihaz");
+
+    window.location.href = "tel:05414024421";
+  } else {
+    console.log("bu bir mobil cihaz değil");
+
+    alert("Bu özellik yalnızca mobil cihazlarda kullanılabilir.");
+  }
+};
 </script>
 <style>
 .clip-path-right-arrow {

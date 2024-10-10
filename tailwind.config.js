@@ -9,8 +9,8 @@ export default {
           "100%": { transform: "translateX(0)", opacity: "1" },
         },
         "bounce-horizontal": {
-          "0%, 100%": { transform: "translateX(0)" }, // Başlangıç ve bitiş noktası
-          "50%": { transform: "translateX(25px)" }, // Ortada sağa doğru hareket
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(25px)" },
         },
       },
       animation: {
