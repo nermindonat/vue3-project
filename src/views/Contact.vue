@@ -125,6 +125,12 @@
       >
         Mesajınız başarıyla gönderilmiştir.
       </div>
+      <div
+        v-if="errorMessage"
+        class="flex items-center justify-center mb-4 font-semibold"
+      >
+        Form gönderirken hata oluştu.
+      </div>
     </div>
   </div>
   <div ref="map" class="w-full h-[500px] p-10 mb-2"></div>
@@ -145,6 +151,7 @@ const isLoading = ref(false);
 
 const map = ref(null);
 const successMessage = ref(false);
+const errorMessage = ref(false);
 
 const validationSchema = yup.object({
   nameSurname: yup.string().required("Ad ve Soyad alanı zorunludur"),
@@ -180,28 +187,32 @@ const handleSubmit = form.handleSubmit(async (values) => {
       setTimeout(() => {
         isLoading.value = false;
         successMessage.value = true;
+        errorMessage.value = false;
       }, 1000);
     }
   } catch (error) {
+    isLoading.value = false;
+    successMessage.value = false;
+    errorMessage.value = true;
     console.error("From gönderirken hata oluştu.", error);
   }
 });
 
-// onMounted(() => {
-//   const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-//   const script = document.createElement("script");
-//   script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}`;
-//   script.async = true;
-//   script.onload = () => {
-//     if (window.google && window.google.maps) {
-//       const googleMap = new window.google.maps.Map(map.value, {
-//         center: { lat: 38.462223, lng: 27.166668 }, // Haritanın merkezi İzmir
-//         zoom: 10, // Yakınlaştırma seviyesi
-//       });
-//     } else {
-//       console.error("Google Maps API yüklenemedi.");
-//     }
-//   };
-//   document.body.appendChild(script);
-// });
+onMounted(() => {
+  const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}`;
+  script.async = true;
+  script.onload = () => {
+    if (window.google && window.google.maps) {
+      const googleMap = new window.google.maps.Map(map.value, {
+        center: { lat: 38.462223, lng: 27.166668 },
+        zoom: 10,
+      });
+    } else {
+      console.error("Google Maps API yüklenemedi.");
+    }
+  };
+  document.body.appendChild(script);
+});
 </script>
