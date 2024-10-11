@@ -42,7 +42,9 @@
         </div>
         <div class="flex items-center justify-center md:justify-start">
           <Icon icon="mdi:email" class="w-5 h-5 animate-pulse" />
-          <p class="ml-2">mnsyapi@gmail.com</p>
+          <a href="mailto:mns.donat@gmail.com" class="ml-2"
+            >mns.donat@gmail.com</a
+          >
         </div>
         <div class="flex items-center justify-center md:justify-start">
           <Icon icon="carbon:location-filled" class="w-5 h-5 animate-pulse" />

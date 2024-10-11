@@ -116,7 +116,7 @@
           />
         </div>
         <div class="flex justify-end">
-          <Button type="submit"> Gönder </Button>
+          <Button type="submit" :loading="isLoading"> Gönder </Button>
         </div>
       </form>
       <div
@@ -141,6 +141,8 @@ import { ref, onMounted } from "vue";
 import { useForm, useField } from "vee-validate";
 import axios from "axios";
 
+const isLoading = ref(false);
+
 const map = ref(null);
 const successMessage = ref(false);
 
@@ -163,6 +165,7 @@ const { value: message, errorMessage: messageError } = useField("message");
 
 const handleSubmit = form.handleSubmit(async (values) => {
   try {
+    isLoading.value = true;
     const response = await axios.post(
       `${import.meta.env.VITE_API_BASE_URL}/contact-form`,
       {
@@ -174,28 +177,31 @@ const handleSubmit = form.handleSubmit(async (values) => {
       }
     );
     if (response) {
-      successMessage.value = true;
+      setTimeout(() => {
+        isLoading.value = false;
+        successMessage.value = true;
+      }, 1000);
     }
   } catch (error) {
     console.error("From gönderirken hata oluştu.", error);
   }
 });
 
-onMounted(() => {
-  const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-  const script = document.createElement("script");
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}`;
-  script.async = true;
-  script.onload = () => {
-    if (window.google && window.google.maps) {
-      const googleMap = new window.google.maps.Map(map.value, {
-        center: { lat: 38.462223, lng: 27.166668 }, // Haritanın merkezi İzmir
-        zoom: 10, // Yakınlaştırma seviyesi
-      });
-    } else {
-      console.error("Google Maps API yüklenemedi.");
-    }
-  };
-  document.body.appendChild(script);
-});
+// onMounted(() => {
+//   const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+//   const script = document.createElement("script");
+//   script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}`;
+//   script.async = true;
+//   script.onload = () => {
+//     if (window.google && window.google.maps) {
+//       const googleMap = new window.google.maps.Map(map.value, {
+//         center: { lat: 38.462223, lng: 27.166668 }, // Haritanın merkezi İzmir
+//         zoom: 10, // Yakınlaştırma seviyesi
+//       });
+//     } else {
+//       console.error("Google Maps API yüklenemedi.");
+//     }
+//   };
+//   document.body.appendChild(script);
+// });
 </script>
