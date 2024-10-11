@@ -17,13 +17,11 @@
       </h2>
       <div class="w-20 bg-black h-1 border mb-4 md:mb-6"></div>
       <p class="text-[#555555] leading-7 md:leading-8">
-        Art35 Mimarlık; işlevsel ve estetik tasarımlar sunan öncü bir mimarlık
-        ofisidir. Deneyimli ekibimizle projelerinizi hayata geçirir,
-        mekanlarınızı sürdürülebilir çözümlerle ilham verici bir dönüşüme
-        taşırız. Art35 Mimarlık; işlevsel ve estetik tasarımlar sunan öncü bir
-        mimarlık ofisidir. Deneyimli ekibimizle projelerinizi hayata geçirir,
-        mekanlarınızı sürdürülebilir çözümlerle ilham verici bir dönüşüme
-        taşırız.
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur soluta
+        distinctio repudiandae enim quae explicabo alias, repellendus placeat
+        amet harum fuga doloribus dolorem recusandae laudantium delectus numquam
+        est provident hic. Similique officia dolore provident aspernatur
+        accusamus velit quisquam quia esse.
       </p>
     </div>
   </div>

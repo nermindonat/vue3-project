@@ -147,11 +147,10 @@ import { ref, onMounted } from "vue";
 import { useForm, useField } from "vee-validate";
 import axios from "axios";
 
-const isLoading = ref(false);
-
 const map = ref(null);
 const successMessage = ref(false);
 const errorMessage = ref(false);
+const isLoading = ref(false);
 
 const validationSchema = yup.object({
   nameSurname: yup.string().required("Ad ve Soyad alanı zorunludur"),
