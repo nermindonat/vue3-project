@@ -48,7 +48,7 @@
       <p>Fuat Edip Baksı Mahallesi Anadolu Caddesi Bayraklı / İzmir</p>
     </div>
   </div>
-  <div class="flex flex-col md:flex-row w-full mb-10 px-20">
+  <div class="flex flex-col md:flex-row w-full mb-10 px-10">
     <div class="flex-1 flex items-center mb-5 md:mb-0 md:mr-5">
       <img
         src="/images/contact-image.jpg"
@@ -194,25 +194,25 @@ const handleSubmit = form.handleSubmit(async (values) => {
     isLoading.value = false;
     successMessage.value = false;
     errorMessage.value = true;
-    console.error("From gönderilirken bir hata oluştu.", error);
+    console.error("From gönderilirken hata oluştu.", error);
   }
 });
 
-onMounted(() => {
-  const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-  const script = document.createElement("script");
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}`;
-  script.async = true;
-  script.onload = () => {
-    if (window.google && window.google.maps) {
-      const googleMap = new window.google.maps.Map(map.value, {
-        center: { lat: 38.462223, lng: 27.166668 },
-        zoom: 10,
-      });
-    } else {
-      console.error("Google Maps API yüklenemedi.");
-    }
-  };
-  document.body.appendChild(script);
-});
+// onMounted(() => {
+//   const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
+//   const script = document.createElement("script");
+//   script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}`;
+//   script.async = true;
+//   script.onload = () => {
+//     if (window.google && window.google.maps) {
+//       const googleMap = new window.google.maps.Map(map.value, {
+//         center: { lat: 38.462223, lng: 27.166668 },
+//         zoom: 10,
+//       });
+//     } else {
+//       console.error("Google Maps API yüklenemedi.");
+//     }
+//   };
+//   document.body.appendChild(script);
+// });
 </script>
