@@ -48,7 +48,7 @@
       <p>Fuat Edip Baksı Mahallesi Anadolu Caddesi Bayraklı / İzmir</p>
     </div>
   </div>
-  <div class="flex flex-col md:flex-row w-full mb-10 px-10">
+  <div class="flex flex-col md:flex-row w-full mb-10 px-20">
     <div class="flex-1 flex items-center mb-5 md:mb-0 md:mr-5">
       <img
         src="/images/contact-image.jpg"
@@ -120,16 +120,17 @@
         </div>
       </form>
       <div
-        v-if="successMessage"
-        class="flex items-center justify-center mb-4 font-semibold"
+        v-if="successMessage || errorMessage"
+        :class="[
+          'flex items-center justify-center mb-4 font-semibold border border-gray-300 mx-9 rounded-[6px] p-1 md:p-0',
+          successMessage ? 'bg-green-400' : 'bg-red-400',
+        ]"
       >
-        Mesajınız başarıyla gönderilmiştir.
-      </div>
-      <div
-        v-if="errorMessage"
-        class="flex items-center justify-center mb-4 font-semibold"
-      >
-        Form gönderirken hata oluştu.
+        {{
+          successMessage
+            ? "Mesajınız başarıyla gönderilmiştir."
+            : "Form gönderilirken bir hata oluştu."
+        }}
       </div>
     </div>
   </div>
@@ -193,7 +194,7 @@ const handleSubmit = form.handleSubmit(async (values) => {
     isLoading.value = false;
     successMessage.value = false;
     errorMessage.value = true;
-    console.error("From gönderirken hata oluştu.", error);
+    console.error("From gönderilirken bir hata oluştu.", error);
   }
 });
 
