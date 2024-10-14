@@ -22,11 +22,11 @@ This is a website I developed for a construction company. You can access the liv
 
 ## Project description
 
-When you first enter the site, there is a “Call Us” button on the homepage. When I click on the button, I check whether the site is opened from a phone or a laptop. If the site is opened from a phone, when I click on the “Call Us” button, I redirect the number there to the phone's dialing field, i.e. the search field.
+When you first enter the site, there is a “Call Us” button on the homepage. When the button is clicked, I check whether the site is opened from a phone or a laptop. If the site is opened from a phone, I redirect the number on the “Call Us” button to the phone's dialing field.
 
-When I click on the email address in the contact information in the footer, I provide an email address using the “mailto:” protocol, which means that when the user clicks on this link, I open the default email client (e.g. Outlook, Gmail) and create a window ready to send an email to the default email address. 
+When I click on the email address in the contact information in the footer, I provide an email address using the “mailto:” protocol. This creates a window ready to send an email to the default email address by opening the default email client (e.g. Outlook, Gmail) when the user clicks on this link. 
 
-I added a contact form on the contact page, which is directly connected to the back-end I wrote with Nest.js.  After entering all the required fields, I press the send button and save the data to the database. Here I print a return message indicating whether the message was successfully sent or not. I also show the address of the company on the map with the latitude and longitude information I have specified via google maps that I have added to the contact page.
+On the contact page I added a contact form, which is directly connected to the back-end I wrote with Nest.js.  After entering all the required fields, I press the send button and save the data to the database. Here I print a return message indicating whether the message was successfully sent or not. I also show the address of the company on the map with the latitude and longitude information I have specified via google maps that I have added to the contact page.
 
 ## İmages
 ## Home Page
