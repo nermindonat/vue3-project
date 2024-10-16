@@ -37,7 +37,7 @@
       <h2 class="mb-4 font-bold text-lg">İletişim Bilgileri</h2>
       <div class="leading-10 text-center md:text-left">
         <div class="flex items-center justify-center md:justify-start">
-          <!-- <Icon icon="ph:phone-fill" class="w-5 h-5 animate-pulse" /> -->
+          <Icon icon="ph:phone-fill" class="w-5 h-5 animate-pulse" />
           <p class="ml-2">0541 402 44 21</p>
         </div>
         <div class="flex items-center justify-center md:justify-start">
