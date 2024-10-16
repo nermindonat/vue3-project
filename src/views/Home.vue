@@ -2,7 +2,7 @@
   <div
     class="h-screen bg-[url('/images/bg-image.jpg')] bg-cover bg-center relative flex flex-col justify-center"
   >
-    <div class="bg-black/50 absolute inset-0 z-0"></div>
+    <div class="bg-black/40 absolute inset-0 z-0"></div>
 
     <h4
       class="text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl z-10 w-5/6 ml-4 sm:ml-6 md:ml-10 mt-12 md:mt-24"
